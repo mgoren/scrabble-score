@@ -31,7 +31,7 @@ public class Scrabble {
     scores.put('q', 10);
     scores.put('z', 10);
 
-    char[] letters = word.toCharArray();
+    char[] letters = word.toLowerCase().toCharArray();
     
     Integer total = 0;
     
