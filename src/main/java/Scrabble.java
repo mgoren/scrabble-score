@@ -31,7 +31,15 @@ public class Scrabble {
     scores.put('q', 10);
     scores.put('z', 10);
 
-    return scores.get(word.charAt(0));
+    char[] letters = word.toCharArray();
+    
+    Integer total = 0;
+    
+    for (char letter : letters) {
+      total += scores.get(letter);
+    }
+
+    return total;
   }
 
 }
