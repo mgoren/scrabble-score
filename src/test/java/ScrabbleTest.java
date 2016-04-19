@@ -17,6 +17,11 @@ public class ScrabbleTest {
     assertEquals(expected, testScrabble.calculateScore("hello"));
   }
 
-
+  @Test
+  public void calculateScore_returnsScoreForWordCaseInsensitive_10() {
+    Scrabble testScrabble = new Scrabble();
+    Integer expected = 8;
+    assertEquals(expected, testScrabble.calculateScore("HeLLo"));
+  }
 
 }
