@@ -16,7 +16,21 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    
+    get("/results", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/results.vtl");
+
+      String inputtedWord = request.queryParams("word");
+      Scrabble myScrabble = new Scrabble();
+      Integer score = myScrabble.calculateScore(inputtedWord);
+
+      model.put("word", inputtedWord);
+      model.put("score", score);
+      
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
 
   }
 
