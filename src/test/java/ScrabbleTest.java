@@ -10,6 +10,13 @@ public class ScrabbleTest {
     assertEquals(expected, testScrabble.calculateScore("a"));
   }
 
+  @Test
+  public void calculateScore_returnsScoreForWord_10() {
+    Scrabble testScrabble = new Scrabble();
+    Integer expected = 8;
+    assertEquals(expected, testScrabble.calculateScore("hello"));
+  }
+
 
 
 }
